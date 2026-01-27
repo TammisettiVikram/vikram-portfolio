@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export default function CursorGlow() {
     const [pos, setPos] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        const move = (e) => {
-            setPos({ x: e.clientX, y: e.clientY });
-        };
-
+        const move = (e) => setPos({ x: e.clientX, y: e.clientY });
         window.addEventListener("mousemove", move);
         return () => window.removeEventListener("mousemove", move);
     }, []);
 
-    return (
+    return createPortal(
         <div
-            className="pointer-events-none fixed top-0 left-0 z-50 hidden md:block"
             style={{
-                transform: `translate(${pos.x - 10}px, ${pos.y - 10}px)`,
+                position: "fixed",
+                left: pos.x,
+                top: pos.y,
+                transform: "translate(-50%, -50%)",
+                pointerEvents: "none",
+                zIndex: 999999,
             }}
         >
-            <div className="h-5 w-5 rounded-full bg-blue-500 opacity-30 blur-xl"></div>
-        </div>
+            <div
+                style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    background: "rgba(59,130,246,0.45)",
+                    filter: "blur(24px)",
+                }}
+            />
+        </div>,
+        document.body
     );
 }
