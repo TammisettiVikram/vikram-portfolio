@@ -8,6 +8,8 @@ import BlogDetail from "../pages/BlogDetail";
 import About from "../pages/About";
 import Resume from "../pages/Resume";
 import Contact from "../pages/Contact";
+import AppRoutes from "./app/routes";
+import CursorGlow from "./components/ui/CursorGlow";
 
 export default function AppRoutes() {
     return (
@@ -23,5 +25,13 @@ export default function AppRoutes() {
                 <Route path="contact" element={<Contact />} />
             </Route>
         </Routes>
+    );
+}
+export default function App() {
+    return (
+        <>
+            <CursorGlow />
+            <AppRoutes />
+        </>
     );
 }
