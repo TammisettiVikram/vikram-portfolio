@@ -24,14 +24,23 @@ export default function Sidebar() {
                         key={item.name}
                         to={item.path}
                         className={({ isActive }) =>
-                            `block rounded-lg px-4 py-2 transition ${isActive
+                            `
+    group relative block rounded-lg px-4 py-2 transition-all duration-300
+    ${isActive
                                 ? "bg-blue-500 text-white"
-                                : "text-slate-300 hover:bg-slate-800"
-                            }`
+                                : "text-slate-300 hover:text-white"
+                            }
+    hover:translate-x-1
+    `
                         }
                     >
-                        {item.name}
+                        {/* Glow */}
+                        <span className="pointer-events-none absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition bg-blue-500/10 blur-md"></span>
+
+                        {/* Text */}
+                        <span className="relative z-10">{item.name}</span>
                     </NavLink>
+
                 ))}
             </nav>
 
