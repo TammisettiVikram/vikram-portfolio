@@ -27,6 +27,6 @@ export const projects = [
             "Cross-Platform Deployment using Docker",
         ],
         github: "https://github.com/TammisettiVikram/ResNet18-CIFAR10-Image-Classifier",
-    live: "https://huggingface.co/spaces/TAMMISETTIVIKRAM/ResNet18-CIFAR10-Image-Classifier?logs=container",
+    live: "https://huggingface.co/spaces/TAMMISETTIVIKRAM/ResNet18-CIFAR10-Image-Classifier",
     },
 ];
