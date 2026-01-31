@@ -17,7 +17,7 @@ built with modern web technologies and deployed for public access.
 **Backend**
 - Flask
 - Django
-- SQLAlchemy
+- sqlalchemy
 - REST APIs
 - JWT Authentication
 
