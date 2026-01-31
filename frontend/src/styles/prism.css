@@ -1,0 +1,50 @@
+/* Prism base */
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #e5e7eb;
+    background: none;
+    font-family: "Fira Code", monospace;
+    font-size: 0.875rem;
+}
+
+/* Code block container */
+pre {
+    background: #020617;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+
+    /* Glow */
+    box-shadow:
+        0 0 0 1px rgba(59, 130, 246, 0.15),
+        0 0 24px rgba(59, 130, 246, 0.35);
+}
+
+/* Inline code */
+:not(pre)>code {
+    background: rgba(59, 130, 246, 0.15);
+    padding: 0.15rem 0.35rem;
+    border-radius: 0.35rem;
+}
+
+/* Syntax colors */
+.token.comment {
+    color: #64748b;
+}
+
+.token.keyword {
+    color: #60a5fa;
+}
+
+.token.string {
+    color: #34d399;
+}
+
+.token.function {
+    color: #fbbf24;
+}
+
+.token.number {
+    color: #f87171;
+}

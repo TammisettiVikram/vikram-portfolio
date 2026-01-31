@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 
 export default function BlogCard({ blog }) {
     return (
-        <div className="group relative rounded-xl bg-slate-900 p-6 border border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/50">
+        <div className="group relative rounded-xl 
+        bg-white border border-slate-200
+        dark:bg-slate-900
+        dark:border-slate-800
+        p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/50">
             {/* Glow effect on hover */}
             <span className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition bg-blue-500/10 blur-xl"></span>
 

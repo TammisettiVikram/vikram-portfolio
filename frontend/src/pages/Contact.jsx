@@ -1,43 +1,76 @@
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import useMagnetic from "../hooks/useMagnetic";
+
+const contacts = [
+    {
+        icon: FaGithub,
+        label: "GitHub",
+        href: "https://github.com/TammisettiVikram",
+    },
+    {
+        icon: FaLinkedin,
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/tammisetti-vikram-044275293/",
+    },
+    {
+        icon: FaEnvelope,
+        label: "Email",
+        href: "mailto:vikramtammisetti@gmail.com",
+    },
+];
+
 export default function Contact() {
     return (
-        <div className="max-w-xl space-y-6">
-            <h1 className="text-3xl font-bold">Contact</h1>
+        <div className="space-y-6">
+            <h1 className="text-2xl font-semibold">Contact</h1>
 
-            <p className="text-slate-300">
-                Feel free to reach out for opportunities, collaborations, or questions.
-            </p>
+            <div className="flex gap-6">
+                {contacts.map(({ icon: Icon, href, label }) => {
+                    const magnetic = useMagnetic(12);
 
-            <ul className="space-y-3 text-slate-300">
-                <li>
-                    📧 Email:{" "}
-                    <a
-                        href="mailto:vikramtammisetti@gmail.com"
-                        className="text-blue-500 hover:underline"
-                    >
-                        vikramtammisetti@gmail.com.com
-                    </a>
-                </li>
-                <li>
-                    💼 LinkedIn:{" "}
-                    <a
-                        href="www.linkedin.com/in/tammisetti-vikram-044275293"
-                        target="_blank"
-                        className="text-blue-500 hover:underline"
-                    >
-                        linkedin.com/in/tammisetti-vikram-044275293
-                    </a>
-                </li>
-                <li>
-                    🧑‍💻 GitHub:{" "}
-                    <a
-                        href="https://github.com/TammisettiVikram"
-                        target="_blank"
-                        className="text-blue-500 hover:underline"
-                    >
-                        github.com/TammisettiVikram
-                    </a>
-                </li>
-            </ul>
+                    return (
+                        <a
+                            key={label}
+                            href={href}
+                            target="_blank"
+                            rel="noreferrer"
+                            ref={magnetic.ref}
+                            onMouseMove={magnetic.onMouseMove}
+                            onMouseLeave={magnetic.onMouseLeave}
+                            className="group relative flex h-14 w-14 items-center justify-center
+                            rounded-xl bg-slate-900/80 backdrop-blur
+                            border border-slate-800/70
+                            hover:border-blue-500/50
+                            overflow-visible transition-all duration-300"
+                        >
+                            {/* Ripple */}
+                            <span
+                                className="absolute inset-0 rounded-xl
+                                bg-blue-500/20
+                                scale-0 opacity-0
+                                group-hover:scale-150 group-hover:opacity-100
+                                transition-all duration-500 ease-out
+                                pointer-events-none"
+                            />
+
+                            {/* glow */}
+                            <span
+                                className="absolute -inset-2 rounded-xl
+                                bg-blue-500/30 blur-xl
+                                opacity-0 group-hover:opacity-100
+                                transition pointer-events-none"
+                            />
+
+
+                            <Icon
+                                className="relative z-10 text-xl
+                                text-slate-400
+                                group-hover:text-blue-400
+                                transition" />
+                        </a>
+                    );
+                })}
+            </div>
         </div>
     );
 }
