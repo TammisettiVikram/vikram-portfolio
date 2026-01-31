@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import python from "../../assets/skills/python.svg";
 import pytorch from "../../assets/skills/pytorch.svg";
 import tensorflow from "../../assets/skills/tensorflow.svg";
-import SQLAlchemy from "../../assets/skills/sqlalchemy.svg";
+import SQLAlchemy from "../../assets/skills/SQLAlchemy.svg";
 import flask from "../../assets/skills/flask.svg";
 import django from "../../assets/skills/django.svg";
 import react from "../../assets/skills/react.svg";
