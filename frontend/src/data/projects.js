@@ -1,8 +1,22 @@
 export const projects = [
     {
+        slug: "A full-stack monitoring system",
+        title: "SentinelCore - A Backend Reliability & Observability Engine",
+        stack: "Python • Flask • SQLAlchemy • PostgreSQL • Gunicorn • React • Axios • Tailwind CSS",
+        description: "A full-stack monitoring system that tracks uptime, latency, and and alert readiness of APIs and websites in real time. Built to demonstrate backend systems thinking, cold-start awareness, and production-style monitoring logic.",
+        features: [
+            "Monitoring - Periodic health checks using a background script",
+            "Smart Failure Detection",
+            "Analytics Dashboard",
+            "Frontend Dashboard - Add / delete services via UI",
+        ],
+        github: "https://github.com/TammisettiVikram/SentinelCore",
+    live: "https://sentinelcore-vikram.vercel.app",
+    },
+    {
         slug: "auth-system",
         title: "Task-Managgement",
-        stack: "FastAPI • JWT • PostgreSQL • Docker • React • SQLAlchemy",
+        stack: "Python • FastAPI • JWT • PostgreSQL • Docker • React • SQLAlchemy • Tailwind CSS",
         description: "Secure authentication system with role-based access control.",
         features: [
             "Create, Read, Update, Delete operations",
@@ -15,9 +29,9 @@ export const projects = [
     live: "https://task-management-mk4ffpk8a-tammisettivikrams-projects.vercel.app",
     },
     {
-        slug: "crud-dashboard",
+        slug: "image classification",
         title: "ResNet18-CIFAR10-Image-Classifier",
-        stack: "PyTorch • TenserFlow • Docker • FastAPI • SQLAlchemy",
+        stack: "Python • PyTorch • TenserFlow • Docker • FastAPI • SQLAlchemy",
         description: "classifying images based on their features.",
         features: [
             "Dual ML Backends: PyTorch & TensorFlow",
