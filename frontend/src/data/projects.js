@@ -1,5 +1,22 @@
 export const projects = [
     {
+        slug: "Full Stack E-Commerce Platform",
+        title: "SentientShop",
+        stack: "Python • Django • Djando REST Framwork • JWT • Stripe API • React • Tailwind CSS • Axios • Docker • Gunicorn",
+        description: "SentientShop is a production-ready full stack e-commerce application built with Django REST Framework and React. It supports product management, cart and checkout, Stripe payments, role-based access control, reviews, and admin dashboards. Designed to demonstrate real-world backend architecture, API design, secure authentication, and cloud deployment.",
+        features: [
+            "Admin Dashboard",
+            "Role-Based Access Control (RBAC)",
+            "Authentication",
+            "Orders - Order history, Payment status tracking, Invoice-style order view",
+            "Store - categories, variants, detail, Review system",
+            "Cart - Guest cart support, Authenticated user cart, Quantity management, Persistent cart storage",
+            "Payments - Stripe integration, Secure checkout flow, Webhook handling, Order status updates"
+        ],
+        github: "https://github.com/TammisettiVikram/SentientShop",
+    live: "https://sentientshop-frontend.vercel.app",
+    },
+    {
         slug: "A full-stack monitoring system",
         title: "SentinelCore - A Backend Reliability & Observability Engine",
         stack: "Python • Flask • SQLAlchemy • PostgreSQL • Gunicorn • React • Axios • Tailwind CSS",
