@@ -12,12 +12,12 @@ export default function ProjectDetail() {
     return (
         <div className="space-y-8 max-w-3xl">
             <h1 className="text-3xl font-bold">{project.title}</h1>
-            <p className="text-slate-400">{project.stack}</p>
+            <p className="text-[var(--text-muted)]">{project.stack}</p>
 
             {/* Overview */}
             <section>
                 <h2 className="text-xl font-semibold mb-2">Overview</h2>
-                <p className="text-slate-300">
+                <p className="text-[var(--text-secondary)]">
                     {project.description}
                 </p>
             </section>
@@ -26,7 +26,7 @@ export default function ProjectDetail() {
             {project.features && (
                 <section>
                     <h2 className="text-xl font-semibold mb-2">Key Features</h2>
-                    <ul className="list-disc list-inside text-slate-300 space-y-1">
+                    <ul className="list-disc list-inside text-[var(--text-secondary)] space-y-1">
                         {project.features.map((feature, idx) => (
                             <li key={idx}>{feature}</li>
                         ))}
@@ -37,7 +37,7 @@ export default function ProjectDetail() {
             {/* Tech Stack */}
             <section>
                 <h2 className="text-xl font-semibold mb-2">Tech Stack</h2>
-                <p className="text-slate-300">{project.stack}</p>
+                <p className="text-[var(--text-secondary)]">{project.stack}</p>
             </section>
 
             {/* Links */}
@@ -47,7 +47,8 @@ export default function ProjectDetail() {
                         href={project.live}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition"
+                        className="rounded-lg bg-blue-600 px-4 py-2 text-white transition-opacity duration-200 hover:opacity-90"
+                        data-cursor="interactive"
                     >
                         Live Demo
                     </a>
@@ -58,7 +59,8 @@ export default function ProjectDetail() {
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-4 py-2 rounded-lg border border-slate-600 text-slate-200 hover:bg-slate-800 transition"
+                        className="rounded-lg border border-[var(--border-color)] px-4 py-2 text-[var(--text-primary)] transition-opacity duration-200 hover:opacity-80"
+                        data-cursor="interactive"
                     >
                         View Code
                     </a>

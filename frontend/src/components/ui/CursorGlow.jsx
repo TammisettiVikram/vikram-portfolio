@@ -2,35 +2,36 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 export default function CursorGlow() {
-    const [pos, setPos] = useState({ x: 0, y: 0 });
+    const [cursor, setCursor] = useState({ x: 0, y: 0, active: false });
 
     useEffect(() => {
-        const move = (e) => setPos({ x: e.clientX, y: e.clientY });
-        window.addEventListener("mousemove", move);
-        return () => window.removeEventListener("mousemove", move);
+        const updatePosition = (e) => {
+            const target = e.target;
+            const interactive = target?.closest?.(
+                "a,button,input,textarea,select,[data-cursor='interactive']"
+            );
+            setCursor({ x: e.clientX, y: e.clientY, active: Boolean(interactive) });
+        };
+
+        window.addEventListener("mousemove", updatePosition, { passive: true });
+        return () => window.removeEventListener("mousemove", updatePosition);
     }, []);
 
     return createPortal(
-        <div
-            style={{
-                position: "fixed",
-                left: pos.x,
-                top: pos.y,
-                transform: "translate(-50%, -50%)",
-                pointerEvents: "none",
-                zIndex: 999999,
-            }}
-        >
+        <>
             <div
+                className={`cursor-core ${cursor.active ? "is-active" : ""}`}
                 style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: "50%",
-                    background: "rgba(59,130,246,0.45)",
-                    filter: "blur(24px)",
+                    transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0) translate(-50%, -50%)`,
                 }}
             />
-        </div>,
+            <div
+                className={`cursor-glow ${cursor.active ? "is-active" : ""}`}
+                style={{
+                    transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0) translate(-50%, -50%)`,
+                }}
+            />
+        </>,
         document.body
     );
 }

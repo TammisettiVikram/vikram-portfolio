@@ -1,4 +1,5 @@
 import Prism from "prismjs";
+Prism.disableWorkerMessageHandler = true;
 import "prismjs/themes/prism-okaidia.css";
 import React from "react";
 import "prismjs/components/prism-python";

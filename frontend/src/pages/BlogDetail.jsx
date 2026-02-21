@@ -1,4 +1,5 @@
 import Prism from "prismjs";
+Prism.disableWorkerMessageHandler = true;
 import "prismjs/components/prism-python";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-bash";
@@ -19,9 +20,9 @@ export default function BlogDetail() {
     if (!blog) return <div>Blog not found</div>;
 
     return (
-        <article className="max-w-3xl prose prose-slate dark:prose-invert">
+        <article className="max-w-3xl prose prose-slate dark:prose-invert text-[var(--text-primary)]">
             <h1>{blog.title}</h1>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-[var(--text-muted)]">
                 {new Date(blog.date).toLocaleDateString("en-IN", {
                     year: "numeric",
                     month: "long",
@@ -37,7 +38,7 @@ export default function BlogDetail() {
                                 <code className={className}>{children}</code>
                             </pre>
                         ) : (
-                            <code className="bg-slate-200 dark:bg-slate-800 px-1 rounded">
+                            <code className="rounded bg-[var(--surface-muted)] px-1">
                                 {children}
                             </code>
                         );
