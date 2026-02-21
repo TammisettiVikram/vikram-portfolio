@@ -26,8 +26,13 @@ export default function Reveal({ as: Tag = "div", className = "", delay = 0, chi
     return (
         <Tag
             ref={ref}
-            className={`reveal ${visible ? "is-visible" : ""} ${className}`.trim()}
-            style={{ transitionDelay: `${delay}ms` }}
+            className={className}
+            style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(20px)",
+                transition: `opacity 700ms ease-out, transform 700ms ease-out`,
+                transitionDelay: `${delay}ms`,
+            }}
         >
             {children}
         </Tag>

@@ -44,7 +44,7 @@ export default function Home() {
         }
         return {
             intro: "Light mode keeps architecture notes crisp for planning and reviews.",
-            phrases: ["Designing clean APIs", "Shipping full-stack features", "Improving service reliability"],
+            phrases: ["Shipping full-stack features", "Designing clean APIs", "Platform Design Resilience", "Software System Integrity"],
         };
     }, [theme]);
 

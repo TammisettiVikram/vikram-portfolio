@@ -56,5 +56,17 @@ export default function ScrambleText({ phrases, interval = 2600, className = "" 
         };
     }, [phrases, interval]);
 
-    return <span className={className}>{text}</span>;
+    return (
+        <span
+            className={className}
+            style={{
+                fontFamily: "monospace",
+                fontVariantNumeric: "tabular-nums",
+                display: "inline-block",
+                minWidth: "100%",
+            }}
+        >
+            {text}
+        </span>
+    );
 }
